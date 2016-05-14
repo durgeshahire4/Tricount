@@ -1,0 +1,43 @@
+
+<div class="col-sm-6">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Accout Name</th>
+        <th>Description</th>
+        <th>Currency</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="account in accountsList">
+        <td>{{account.name}}</td>
+        <td>{{account.description}}</td>
+        <td>{{account.currency}}</td>
+        <td>
+          <button ng-click="deleteAccount(account._id)">X</button>
+        </td>
+      </tr>  
+    </tbody>    
+  </table>
+</div>
+<div class="col-sm-6">
+  <div>
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control input-sm" placeholder="Enter Account Name" ng-model="accountObj.name"><br>
+          <input type="text" class="form-control input-sm" placeholder="Enter Description" ng-model="accountObj.description"><br>
+          <input type="text" class="form-control input-sm" placeholder="Enter Currency" ng-model="accountObj.currency"><br>
+          <div class="participants-list"></div>
+          <div class="participants-list-html">
+            <input type="text" class="form-control input-sm" placeholder="Enter participants" ng-model="participant" /><button ng-click="addParticipant()">Add</button>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm" ng-click="addNewAccount()">Add New Account</button>
+      </form>
+    </div>
+  </div>
+</div>
+

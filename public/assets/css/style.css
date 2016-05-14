@@ -1,0 +1,31 @@
+.container {
+	background-color: gray;
+}
+
+.header span{
+	cursor: pointer;
+	padding: 5px;
+	background-color: bisque;
+}
+
+.QuickMenuButton {
+	padding: 7px;
+	width: 40px;
+	float: right;
+	height: 20px;
+	background-color: red;
+}
+
+.QuickMenu {
+	width: 150px;
+	float: right;
+	height: 200px;
+	background-color: red;
+}
+
+.CustomerBlock {
+	width: 150px;
+	height: 150px;
+	background-color: gray;
+	margin: 10px;
+}

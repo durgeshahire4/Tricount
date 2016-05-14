@@ -1,0 +1,42 @@
+<div id="user-list">
+  <div class="col-sm-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Mobile Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in userList">
+          <td>{{item.name}}</td>
+          <td>{{item.username}}</td>
+          <td>{{item.mobile}}</td>   
+          <td>
+            <button ng-click="deleteUser(item._id)">X</button>
+            <button ng-click="editUser(item._id)">Edit</button>
+          </td>
+        </tr>  
+      </tbody>    
+    </table>
+  </div>
+  <div class="col-sm-6">
+    <div>
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+          <div class="form-group">
+            <input type="hidden" ng-model="userObj.id">
+            <input type="text" class="form-control input-sm" placeholder="Enter Name" ng-model="userObj.name"><br>
+            <input type="text" class="form-control input-sm" placeholder="Enter Username" ng-model="userObj.username"><br>
+            <input type="password" class="form-control input-sm" placeholder="Enter Password" ng-model="userObj.password"><br>
+            <input type="text" class="form-control input-sm" placeholder="Mobile Number" ng-model="userObj.mobile">
+          </div>
+          <button type="submit" ng-hide="userObj.isEditMode" class="btn btn-primary btn-sm" ng-click="addNewUser()">Add New User</button>
+          <button type="submit" ng-show="userObj.isEditMode" class="btn btn-primary btn-sm" ng-click="updateUser(userObj.id)"> Update User</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

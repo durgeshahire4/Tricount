@@ -7,6 +7,7 @@ function AuthService ($http, UserService, $cookieStore, $timeout, $rootScope) {
 	service.Login = Login;
 	service.SetCredentials = SetCredentials;
 	service.ClearCredentials = ClearCredentials;
+	service.GetCredentials = GetCredentials;
 	return service;
 
 	
@@ -25,15 +26,21 @@ function AuthService ($http, UserService, $cookieStore, $timeout, $rootScope) {
 		}, 1000);
 	};
 
-	function SetCredentials (username, password) {
+	function SetCredentials (userInfo) {
 		$rootScope.globals = {
 			currentUser: {
-			  username: username,
-			  password: password
+			  username: userInfo.username,
+			  password: userInfo.password,
+			  name: userInfo.name
 			}	
 		}
 		$cookieStore.put('globals', $rootScope.globals);
 	};
+
+	function GetCredentials () {
+		return $rootScope.globals;
+	}
+
 	function ClearCredentials () {
 		$rootScope.globals = {};
 		$cookieStore.remove('globals');

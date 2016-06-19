@@ -3,38 +3,33 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-
       <title>TriCount</title>
-
       <link rel="stylesheet" href="../assets/css/bootstrap.min.css"><!-- load bootstrap -->
-      <style>
-          html                    { overflow-y:scroll; }
-          body                    { padding-top:50px; }
-          #todo-list              { margin-bottom:30px; }
-      </style>
-
       <!-- SPELLS -->
       <script src="assets/js/jquery.min.js"></script><!-- load jquery -->
       <script src="assets/js/angular.js"></script><!-- load angular -->
       <script type="text/javascript" src="assets/js/angular-route.min.js"></script>
       <script type="text/javascript" src="assets/js/underscore-min.js"></script>
       <script type="text/javascript" src="assets/js/angular-cookies.js"></script>
-      <script src="app.js"></script>
-      <script type="text/javascript" src="Login/LoginController.js"></script>
-      <script type="text/javascript" src="User/UserController.js"></script>
-      <script type="text/javascript" src="Home/HomeController.js"></script>
-      <script type="text/javascript" src="USer/UserService.js"></script>
-      <script type="text/javascript" src="Login/AuthService.js"></script>
-      <script type="text/javascript" src="Services/AccountsService.js"></script>
+      
+
 
   </head>
   <body>
+    <dm-header></dm-header>
     <div class="container">
-      <div class="text-center">
-          <h2>Tri-Count</h2>
-     </div>
      <ng-view></ng-view>
-     
     </div>
+    <script src="app.js"></script>
+    <script type="text/javascript" src="Login/LoginController.js"></script>
+    <script type="text/javascript" src="User/UserController.js"></script>
+    <script type="text/javascript" src="Account/AccountController.js"></script>
+    <script type="text/javascript" src="USer/UserService.js"></script>
+    <script type="text/javascript" src="Login/AuthService.js"></script>
+    <script type="text/javascript" src="Services/AccountsService.js"></script>
+    <script type="text/javascript" src="directive/dm-header/dm-header.js"></script>
+    <script type="text/javascript" src="Logout/LogoutController.js"></script>
+    <script type="text/javascript" src="ShowExpense/ShowExpenseController.js"></script>
+    <script type="text/javascript" src="ShowExpense/ExpenseService.js"></script>
   </body>
 </html>

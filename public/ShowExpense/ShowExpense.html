@@ -1,0 +1,54 @@
+
+
+<div class="col-sm-6">
+  <table class="table">
+    <tbody>
+      <tr ng-repeat="expense in expenseList">
+        <td>{{expense.reason}}</td>
+        <td>Paid By - {{expense.paid_by}}</td>
+        <td>{{expense.cost}} {{account.currency}}</td>
+        <td>
+          <button ng-click="deleteExpense(expense._id)">X</button>
+        </td>
+      </tr>  
+    </tbody>    
+  </table>
+</div>
+<div class="col-sm-6">
+  <div>
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <span>New Expense</span>
+      <form>
+        <div class="form-group">
+          <label>What :</label>
+          <input type="text" class="form-control input-sm" placeholder="Reason for expense" ng-model="expenseObj.reason"><br>
+
+          <label>Cost :</label>
+          <input type="text" class="form-control input-sm" placeholder="Enter Cost" ng-model="expenseObj.cost"><br>
+
+          <label>When :</label>
+          <input type="text" class="form-control input-sm" id="datepicker" placeholder="Payment Date" ng-model="expenseObj.payment_date"><br>
+          
+          <label>Paid by :</label>
+          <select class="form-control input-sm" ng-model="expenseObj.paid_by" ng-options="item for item in account.participants">
+          <select>
+          
+
+          <label>For</label>
+          <div>
+            <table width="100%">
+              <tr ng-repeat='item in participantCost track by $index'>
+                <td><input type='checkbox' checked="item.seleced" ng-click='onCheckboxChange($index)'/></td>
+                <td>{{item.participant}}</td>
+                <td>{{item.eachCost}}</td>  
+              </tr>
+            </table> 
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm " ng-click="addNewExpense()">Save</button>
+        <button type="button" class="btn btn-primary btn-sm " ng-click="clear()">Clear</button>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -16,9 +16,9 @@ function LoginController ($scope, $location, AuthService) {
 		
 		AuthService.Login($scope.vm.username, $scope.vm.password, function (res) {
 			if (res.success) {
-				AuthService.SetCredentials($scope.vm.username, $scope.vm.password);
+				AuthService.SetCredentials(res.data);
 				$scope.loading = false;
-			  $location.url('/Home'); 					
+			  $location.url('/Account'); 					
 			}
 		});	
 	};
